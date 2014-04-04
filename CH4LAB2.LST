@@ -1,0 +1,120 @@
+@@C:/script/indo_n2
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+SQL> SELECT TABLE_NAME FROM USER_TABLES;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+DEPT                                                                            
+EMP                                                                             
+BONUS                                                                           
+SALGRADE                                                                        
+STUDENTS                                                                        
+COURSE                                                                          
+DEPENDENT                                                                       
+EMPLOYEE                                                                        
+LOCATION                                                                        
+POSITION                                                                        
+ROOM                                                                            
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+MAJOR                                                                           
+DEPARTMENT                                                                      
+REGISTRATION                                                                    
+DEPTA                                                                           
+FACULTY                                                                         
+TERM                                                                            
+CRSSECTION                                                                      
+EMPLEVEL                                                                        
+QUALIFICATION                                                                   
+STUDENT                                                                         
+
+21 rows selected.
+
+SQL> SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE FROM USER_CONSTRAINTS WHERE TABLE_NAME IN( 'DEPTA','EMPLOYEE', 'DEPENDENT','POSITION','QUALIFICATION','EMPLEVEL') ;
+
+CONSTRAINT_NAME                C                                                
+------------------------------ -                                                
+SYS_C006059                    C                                                
+DEPEND_PK                      P                                                
+SYS_C006055                    C                                                
+DEPTAA_PK                      P                                                
+FK_EMPLOYEE                    R                                                
+SYS_C006065                    C                                                
+CHK_SAL                        C                                                
+LEID_PK                        P                                                
+SYS_C006057                    C                                                
+EMID_PK                        P                                                
+FK_POSITION                    R                                                
+
+CONSTRAINT_NAME                C                                                
+------------------------------ -                                                
+FK_DEPTAA                      R                                                
+FK_QUALIF                      R                                                
+SYS_C006061                    C                                                
+POID_PK                        P                                                
+SYS_C006063                    C                                                
+QUID_PK                        P                                                
+
+17 rows selected.
+
+SQL> 

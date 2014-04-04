@@ -1,0 +1,217 @@
+SELECT TABLE_NAME FROM USER_TABLES;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+DEPT                                                                            
+EMP                                                                             
+BONUS                                                                           
+SALGRADE                                                                        
+STUDENTS                                                                        
+COURSE                                                                          
+LOCATION                                                                        
+ROOM                                                                            
+MAJOR                                                                           
+DEPARTMENT                                                                      
+REGISTRATION                                                                    
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+FACULTY                                                                         
+TERM                                                                            
+CRSSECTION                                                                      
+EMPLEVEL                                                                        
+DEPTA                                                                           
+QUALIFICATION                                                                   
+EMPLOYEE                                                                        
+DEPENDENT                                                                       
+POSITION                                                                        
+STUDENT                                                                         
+
+21 rows selected.
+
+SQL> desc dept
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                    NOT NULL NUMBER(2)
+ DNAME                                              VARCHAR2(14)
+ LOC                                                VARCHAR2(13)
+
+SQL> desc emp
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)
+
+SQL> desc bonus
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ SAL                                                NUMBER
+ COMM                                               NUMBER
+
+SQL> desc students
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ STUDENTID                                 NOT NULL NUMBER(5)
+ LASTNAME                                           VARCHAR2(10)
+ FIRSTNAME                                          VARCHAR2(10)
+ STREET                                             VARCHAR2(30)
+ CITY                                               VARCHAR2(20)
+ STATENAME                                          VARCHAR2(2)
+ ZIP                                                NUMBER(5)
+ STARTTERM                                          VARCHAR2(4)
+ BIRTHDATE                                          DATE
+ FACULTYID                                          NUMBER(3)
+ MAJORID                                            NUMBER(3)
+ PHONE                                              NUMBER(10)
+
+SQL> desc course
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COURSEID                                  NOT NULL NUMBER(4)
+ TITLE                                     NOT NULL VARCHAR2(50)
+ CREDITS                                   NOT NULL NUMBER(4)
+ PREREQ                                             VARCHAR2(50)
+
+SQL> desc location
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROOMID                                    NOT NULL NUMBER(4)
+ BUILDING                                  NOT NULL VARCHAR2(50)
+ ROOMNO                                    NOT NULL NUMBER(4)
+ CAPACITY                                  NOT NULL NUMBER(4)
+ ROOMTYPE                                  NOT NULL CHAR(1)
+
+SQL> desc room
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROOMTYPE                                  NOT NULL VARCHAR2(50)
+ ROOMDESC                                  NOT NULL VARCHAR2(50)
+
+SQL> desc major
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MAJORID                                   NOT NULL NUMBER(4)
+ MAJORDESC                                 NOT NULL VARCHAR2(50)
+
+SQL> desc department
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTID                                    NOT NULL NUMBER(4)
+ DEPTNAME                                  NOT NULL VARCHAR2(50)
+ FACULTYID                                 NOT NULL NUMBER(4)
+
+SQL> desc registration
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ STUDENTID                                 NOT NULL NUMBER(4)
+ CSID                                      NOT NULL NUMBER(4)
+ MIDTERM                                   NOT NULL CHAR(4)
+ FINAL                                     NOT NULL CHAR(4)
+ STATUS                                    NOT NULL CHAR(4)
+
+SQL> desc faculty
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ FACULTYID                                 NOT NULL NUMBER(4)
+ NAME                                      NOT NULL VARCHAR2(50)
+ ROOMID                                    NOT NULL NUMBER(4)
+ PHONE                                     NOT NULL VARCHAR2(50)
+ DEPTID                                    NOT NULL NUMBER(4)
+
+SQL> desc term
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TERMID                                    NOT NULL VARCHAR2(50)
+ TERMDESC                                  NOT NULL VARCHAR2(50)
+ STARTDATE                                 NOT NULL DATE
+ ENDDATE                                   NOT NULL DATE
+
+SQL> desc crssection
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CSID                                      NOT NULL NUMBER(4)
+ COURSEID                                  NOT NULL NUMBER(4)
+ SECTION                                   NOT NULL NUMBER(4)
+ TERMID                                    NOT NULL VARCHAR2(50)
+ FACULTYID                                 NOT NULL NUMBER(4)
+ DAY                                       NOT NULL DATE
+ STARTTIME                                 NOT NULL VARCHAR2(50)
+ ENDTIME                                   NOT NULL VARCHAR2(50)
+ ROOMID                                    NOT NULL NUMBER(4)
+ MAXCOUNT                                  NOT NULL NUMBER(4)
+
+SQL> desc emplevel
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LEVEL_NO                                  NOT NULL NUMBER(4)
+ LOWSALARY                                          NUMBER(4)
+ HIGHSALARY                                         NUMBER(4)
+
+SQL> desc depta
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPIDA                                    NOT NULL NUMBER(4)
+ DEPTANAME                                          VARCHAR2(50)
+ LOCATION                                           VARCHAR2(50)
+ EMPLOYEEID                                         NUMBER(4)
+
+SQL> desc qualification
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ QUALID                                    NOT NULL NUMBER(4)
+ QUALDESC                                           VARCHAR2(50)
+
+SQL> desc employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEEID                                NOT NULL NUMBER(4)
+ LNAME                                              VARCHAR2(50)
+ FNAME                                              VARCHAR2(50)
+ POSITIONID                                         NUMBER(4)
+ SUPERVISOR                                         CHAR(5)
+ HIREDATE                                           DATE
+ SALARY                                             NUMBER(4)
+ COMMISSION                                         NUMBER(4)
+ DEPTAID                                            NUMBER(4)
+ QUALID                                             NUMBER(4)
+
+SQL> desc dependent
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEEID                                NOT NULL NUMBER(4)
+ DENPENDENTID                              NOT NULL NUMBER(4)
+ DEPDOB                                             DATE
+ RELATION                                           VARCHAR2(50)
+
+SQL> desc position
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ POSITIONID                                NOT NULL NUMBER(4)
+ POSDESC                                            VARCHAR2(50)
+
+SQL> desc student
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ STUDENTID                                 NOT NULL NUMBER(4)
+ LAST                                      NOT NULL VARCHAR2(50)
+ FIRST                                     NOT NULL VARCHAR2(50)
+ STREET                                    NOT NULL VARCHAR2(50)
+ CITY                                      NOT NULL VARCHAR2(50)
+ STATE                                              CHAR(2)
+ ZIP                                       NOT NULL NUMBER(4)
+ STARTTERM                                 NOT NULL VARCHAR2(50)
+ BIRTHDATE                                 NOT NULL DATE
+ FACULTYID                                 NOT NULL NUMBER(4)
+ MAJORID                                   NOT NULL NUMBER(4)
+ PHONE                                     NOT NULL VARCHAR2(50)
+
+
+SQL> 
